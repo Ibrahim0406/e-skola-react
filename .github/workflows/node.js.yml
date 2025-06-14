@@ -5,18 +5,22 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - "master"  # Aktivira workflow kada se napravi push na master branch
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "master"  # Aktivira workflow kada se otvori PR prema master branchu
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Definiše operativni sistem za CI proces
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Install deps
-      run: npm install
-    - name: Build app
-      run: npm run build
+      - uses: actions/checkout@v4  # Preuzima kod sa repozitorijuma
+      - name: Install dependencies
+        run: npm install  # Instalira sve zavisnosti
+      - name: Build app
+        run: npm run build  # Kreira build za aplikaciju
+      - name: Run tests (ako postoje)
+        run: npm test  # Pokreće testove (ako ih imate)
 
