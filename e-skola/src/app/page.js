@@ -19,7 +19,7 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly. Ponoc prosla 1122222
           Amar Ribo </li>
-          <li> Ibrahim Bišić</li>
+          <li> Ibrahim Bišić 123455</li>
         </ol>
 
         <div className={styles.ctas}>
